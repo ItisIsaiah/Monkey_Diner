@@ -26,7 +26,7 @@ public class CustomerTrail : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, new Vector3(movespots[randomSpot].position.x,transform.position.y, movespots[randomSpot].position.z), speed*Time.deltaTime);
-        if(Vector3.Distance(transform.position, movespots[randomSpot].position) < 0.2f)
+        if(Vector3.Distance(transform.position, movespots[randomSpot].position) < 5f)
         {
             if (goAway)
             {
