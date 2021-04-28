@@ -5,44 +5,43 @@ using UnityEngine;
 public class CustomerTrail : MonoBehaviour
 {
     public float speed;
-
-    public Transform[] movespots;
-    public Door door;
-    public Transform doorTransform;
-    public Barstools barstools;
     public bool goAway;
-    private int randomSpot;
+    public CustomerSpawner thing;
+    // private int randomSpot;
+    private int whereTo;
 
     public float waitTIme;
     public float startWaitTime;
-
+    Transform[]  movespot;
     // Start is called before the first frame update
     void Start()
     {
-      
+        thing = GetComponentInParent<CustomerSpawner>();
+        movespot = thing.movespots;
+        whereTo = thing.randomSpot;
 
 
-        movespots= barstools.allchildren;
-        doorTransform = door.doorPoint;
-        randomSpot = Random.Range(0, movespots.Length);
+        //  randomSpot = Random.Range(0, movespots.Length);
         waitTIme = startWaitTime;
         goAway = false;
-        movespots[movespots.Length - 1] = doorTransform;
-        Debug.Log(movespots.Length + "THIS IS MY STOOOLS");
+        
+        Debug.Log(movespot + "THIS IS MY STOOOLS");
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(movespots[randomSpot].position.x,transform.position.y, movespots[randomSpot].position.z), speed*Time.deltaTime);
-        Debug.Log("I AM GOING "+ randomSpot );
-        if (Vector3.Distance(transform.position, movespots[randomSpot].position) < 5f)
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(movespot[whereTo].position.x,transform.position.y,movespot[whereTo].position.z), speed*Time.deltaTime);
+        Debug.Log("I AM GOING "+ whereTo );
+        if (Vector3.Distance(transform.position, movespot[whereTo].position) < 5f)
         {
             if (goAway)
             {
                 
-                randomSpot = movespots.Length-1;
+                whereTo = thing.movespots.Length-1;
             }
         }
     }

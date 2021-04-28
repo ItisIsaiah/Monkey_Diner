@@ -436,6 +436,8 @@ GameObject:
   m_Component:
   - component: {fileID: 81565296}
   - component: {fileID: 81565297}
+  - component: {fileID: 81565299}
+  - component: {fileID: 81565298}
   m_Layer: 0
   m_Name: Right hand
   m_TagString: Untagged
@@ -472,7 +474,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 4766092344323370, guid: e201a24a09e942042b93390d0444d728,
+  m_ModelPrefab: {fileID: 8283727768769444239, guid: dc1c8591660044143892882116f57f11,
     type: 3}
   m_ModelTransform: {fileID: 0}
   m_AnimateModel: 0
@@ -490,6 +492,71 @@ MonoBehaviour:
   m_MoveObjectIn: 14
   m_MoveObjectOut: 15
   m_PoseProvider: {fileID: 0}
+--- !u!135 &81565298
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81565295}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.005
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &81565299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81565295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4253f32900bcc4d499d675566142ded0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_AttachTransform: {fileID: 0}
+  m_StartingSelectedInteractable: {fileID: 0}
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectActionTrigger: 0
+  m_HideControllerOnSelect: 0
+  m_PlayAudioClipOnSelectEntered: 0
+  m_AudioClipForOnSelectEntered: {fileID: 0}
+  m_PlayAudioClipOnSelectExited: 0
+  m_AudioClipForOnSelectExited: {fileID: 0}
+  m_PlayAudioClipOnHoverEntered: 0
+  m_AudioClipForOnHoverEntered: {fileID: 0}
+  m_PlayAudioClipOnHoverExited: 0
+  m_AudioClipForOnHoverExited: {fileID: 0}
+  m_PlayHapticsOnSelectEntered: 0
+  m_HapticSelectEnterIntensity: 0
+  m_HapticSelectEnterDuration: 0
+  m_PlayHapticsOnSelectExited: 0
+  m_HapticSelectExitIntensity: 0
+  m_HapticSelectExitDuration: 0
+  m_PlayHapticsOnHoverEntered: 0
+  m_HapticHoverEnterIntensity: 0
+  m_HapticHoverEnterDuration: 0
+  m_PlayHapticsOnHoverExited: 0
+  m_HapticHoverExitIntensity: 0
+  m_HapticHoverExitDuration: 0
 --- !u!1 &105295984
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +567,8 @@ GameObject:
   m_Component:
   - component: {fileID: 105295985}
   - component: {fileID: 105295986}
+  - component: {fileID: 105295988}
+  - component: {fileID: 105295987}
   m_Layer: 0
   m_Name: Left hand
   m_TagString: Untagged
@@ -536,7 +605,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 4927695388962516, guid: c6a74181d4000004887343fb87b3c53a,
+  m_ModelPrefab: {fileID: 8283727768769444239, guid: 227a7a931e85a47408aea54765696b3e,
     type: 3}
   m_ModelTransform: {fileID: 0}
   m_AnimateModel: 0
@@ -554,6 +623,71 @@ MonoBehaviour:
   m_MoveObjectIn: 14
   m_MoveObjectOut: 15
   m_PoseProvider: {fileID: 0}
+--- !u!135 &105295987
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105295984}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.005
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &105295988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105295984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4253f32900bcc4d499d675566142ded0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_AttachTransform: {fileID: 0}
+  m_StartingSelectedInteractable: {fileID: 0}
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectActionTrigger: 0
+  m_HideControllerOnSelect: 0
+  m_PlayAudioClipOnSelectEntered: 0
+  m_AudioClipForOnSelectEntered: {fileID: 0}
+  m_PlayAudioClipOnSelectExited: 0
+  m_AudioClipForOnSelectExited: {fileID: 0}
+  m_PlayAudioClipOnHoverEntered: 0
+  m_AudioClipForOnHoverEntered: {fileID: 0}
+  m_PlayAudioClipOnHoverExited: 0
+  m_AudioClipForOnHoverExited: {fileID: 0}
+  m_PlayHapticsOnSelectEntered: 0
+  m_HapticSelectEnterIntensity: 0
+  m_HapticSelectEnterDuration: 0
+  m_PlayHapticsOnSelectExited: 0
+  m_HapticSelectExitIntensity: 0
+  m_HapticSelectExitDuration: 0
+  m_PlayHapticsOnHoverEntered: 0
+  m_HapticHoverEnterIntensity: 0
+  m_HapticHoverEnterDuration: 0
+  m_PlayHapticsOnHoverExited: 0
+  m_HapticHoverExitIntensity: 0
+  m_HapticHoverExitDuration: 0
 --- !u!1 &108583899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,7 +1456,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -5484,6 +5618,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63082e6e243589148b0491a70d294142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door: {fileID: 1804391478}
+  movespots:
+  - {fileID: 1141023756}
+  - {fileID: 243433963}
+  - {fileID: 822480157}
+  - {fileID: 2064643586}
+  - {fileID: 1845761682}
+  - {fileID: 1280038469}
+  - {fileID: 689003563}
+  - {fileID: 670230050}
+  - {fileID: 1226114709}
+  - {fileID: 1183389929}
+  - {fileID: 1466091965}
+  - {fileID: 1289624016}
+  - {fileID: 2025135534}
+  - {fileID: 1191539425}
+  - {fileID: 43435882}
+  - {fileID: 1189529643}
+  - {fileID: 1328089798}
+  - {fileID: 1528750589}
+  - {fileID: 825783041}
+  - {fileID: 1378012790}
+  - {fileID: 1550129232}
+  - {fileID: 75571758}
+  - {fileID: 478547023}
+  - {fileID: 1632354188}
+  - {fileID: 997548675}
+  - {fileID: 1329776101}
+  - {fileID: 147236964}
+  - {fileID: 48428602}
+  - {fileID: 1755678756}
+  - {fileID: 2051971089}
+  - {fileID: 195783290}
+  - {fileID: 2039167504}
+  - {fileID: 906078713}
+  - {fileID: 123673132}
+  - {fileID: 1704615091}
+  - {fileID: 477785774}
+  randomSpot: 0
   customer: {fileID: 6662861764846542256, guid: 98a6c5e33b11452449e9c85970e00e33,
     type: 3}
 --- !u!4 &1702333541
@@ -5885,7 +6058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7edca60f20344ab43ba1b31d9ef3dc33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorPoint: {fileID: 0}
+  doorPoint: {fileID: 1804391478}
 --- !u!1001 &1845761681
 PrefabInstance:
   m_ObjectHideFlags: 0

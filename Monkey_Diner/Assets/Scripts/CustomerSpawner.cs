@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CustomerSpawner : MonoBehaviour
 {
+    public Transform door;
+    public Transform[] movespots;
+    public int randomSpot;
     public Object customer;
     Transform spawnPoint;
     int customerCount;
@@ -13,7 +16,9 @@ public class CustomerSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        randomSpot = Random.Range(0, movespots.Length-2);
         spawnPoint = GetComponent<Transform>();
+        movespots[movespots.Length - 1] = door;
         Instantiate(customer,spawnPoint);
         customerCount = 1;
         curTime = 0;
@@ -23,9 +28,13 @@ public class CustomerSpawner : MonoBehaviour
     void Update()
     {
         curTime += Time.deltaTime;
-        if (curTime == TimetillSpawn)
+        //Debug.Log(curTime);
+        if (curTime >= TimetillSpawn && customerCount <=5)
         {
+            randomSpot = Random.Range(0, movespots.Length);
             Instantiate(customer, spawnPoint);
+            customerCount++;
+            
             curTime = 0;
         }
     }
