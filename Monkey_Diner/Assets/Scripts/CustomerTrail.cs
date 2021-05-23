@@ -35,7 +35,7 @@ public class CustomerTrail : MonoBehaviour
     {
         
         transform.position = Vector3.MoveTowards(transform.position, new Vector3(movespot[whereTo].position.x,transform.position.y,movespot[whereTo].position.z), speed*Time.deltaTime);
-        Debug.Log("I AM GOING "+ whereTo );
+        //Debug.Log("I AM GOING "+ whereTo );
         if (Vector3.Distance(transform.position, movespot[whereTo].position) < 5f)
         {
             if (goAway)
