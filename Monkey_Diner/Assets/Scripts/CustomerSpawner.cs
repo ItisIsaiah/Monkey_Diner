@@ -7,6 +7,7 @@ public class CustomerSpawner : MonoBehaviour
     public Transform door;
     public Transform[] movespots;
     public int randomSpot;
+    public int orderNumber;
     public Object customer;
     Transform spawnPoint;
     int customerCount;
@@ -17,6 +18,7 @@ public class CustomerSpawner : MonoBehaviour
     void Start()
     {
         randomSpot = Random.Range(0, movespots.Length-2);
+        orderNumber = Random.Range(0, 2);
         spawnPoint = GetComponent<Transform>();
         movespots[movespots.Length - 1] = door;
         Instantiate(customer,spawnPoint);
@@ -32,6 +34,7 @@ public class CustomerSpawner : MonoBehaviour
         if (curTime >= TimetillSpawn && customerCount <=5)
         {
             randomSpot = Random.Range(0, movespots.Length);
+            orderNumber = Random.Range(0, 2);
             Instantiate(customer, spawnPoint);
             customerCount++;
             
