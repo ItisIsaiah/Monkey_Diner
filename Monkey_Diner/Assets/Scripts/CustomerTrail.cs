@@ -17,10 +17,10 @@ public class CustomerTrail : MonoBehaviour
     ChatB bubble;
 
     public int orderNumber;
+    string[] topfoods=new string[3];
 
 
 
-    
 
 
 
@@ -35,7 +35,7 @@ public class CustomerTrail : MonoBehaviour
         waitTIme = startWaitTime;
         goAway = false;
 
-
+        
 
 
         Instantiate(chatbubble, bubblePoint);
@@ -45,10 +45,16 @@ public class CustomerTrail : MonoBehaviour
         if (orderNumber != 0)
         {
             bubble.SetUp(ChatB.IconType.Lettuce);
+            topfoods[0] = "patty";
+            topfoods[1] = "lettuce";
+            topfoods[2] = "TopBun";
         }
         else
         {
             bubble.SetUp(ChatB.IconType.Cheese);
+            topfoods[0] = "patty";
+            topfoods[1] = "Cheese";
+            topfoods[2] = "TopBun";
         }
 
     }

@@ -36,7 +36,7 @@ public class ChatB : MonoBehaviour
     {
         iconSpriteRenderer.sprite = GetIcon(iconType);
     }
-    private Sprite GetIcon(IconType iconType)
+    public Sprite GetIcon(IconType iconType)
     {
         switch (iconType)
         {
