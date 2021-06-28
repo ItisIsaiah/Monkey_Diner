@@ -9,15 +9,19 @@ public class CustomerTrail : MonoBehaviour
     public CustomerSpawner thing;
    
     private int whereTo;
-    public Object chatbubble;
+    public GameObject chatbubble;
     public float waitTIme;
     public float startWaitTime;
     Transform[]  movespot;
     public Transform bubblePoint;
     ChatB bubble;
 
+    public GameObject ResultBubble;
+    
+
     public int orderNumber;
-    string[] topfoods=new string[3];
+    public  string[] topfoods=new string[3];
+    public string[] foodGiven;
 
 
 
@@ -38,8 +42,10 @@ public class CustomerTrail : MonoBehaviour
         
 
 
-        Instantiate(chatbubble, bubblePoint);
+        chatbubble=Instantiate(chatbubble, bubblePoint);
         bubble = GetComponentInChildren<ChatB>();
+
+
 
         Debug.Log(orderNumber);
         if (orderNumber != 0)
@@ -81,5 +87,24 @@ public class CustomerTrail : MonoBehaviour
         
     }
 
-    
+    public bool Compare(string[] foodGave)
+    {
+        for(int i=0;i<3;i++){
+            if (topfoods[i]==foodGave[i])
+            {
+               
+                continue;
+            }
+            else
+            {
+
+                chatbubble.SetActive(false);
+                ResultBubble = Instantiate(ResultBubble, bubblePoint);
+                return false;
+            }
+        }
+        ResultBubble = Instantiate(ResultBubble, bubblePoint);
+        chatbubble.SetActive(false);
+        return true;
+    }
 }

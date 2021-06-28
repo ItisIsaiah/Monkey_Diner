@@ -18,12 +18,13 @@ public class Snapping : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {/*
         if (isSnapping)
         {
             
             transform.position = snapPoint.position;
         }
+        */
     }
 
     public void Snap(Transform snap)

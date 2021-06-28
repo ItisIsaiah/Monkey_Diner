@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 7733626918893109439}
   m_Layer: 0
   m_Name: Customer
-  m_TagString: Untagged
+  m_TagString: Customer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -481,7 +481,14 @@ MonoBehaviour:
   waitTIme: 0
   startWaitTime: 0
   bubblePoint: {fileID: 2249257847247737666}
+  ResultBubble: {fileID: 6962635086539288745, guid: 91bd834ee2b8cdc4293c2d86d10686d2,
+    type: 3}
   orderNumber: 0
+  topfoods:
+  - 
+  - 
+  - 
+  foodGiven: []
 --- !u!65 &6662861764846542271
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -493,8 +500,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.68361187, y: 0.76183724, z: 0.49252027}
-  m_Center: {x: 0.004848957, y: 0.7365371, z: 0.08143577}
+  m_Size: {x: 0.27818978, y: 0.76183724, z: 0.15954244}
+  m_Center: {x: -0.03605616, y: 0.7365371, z: 0.036809564}
 --- !u!54 &6662861764846542270
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -522,8 +529,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.06
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.32
+  m_Center: {x: 0.03, y: 0.76, z: 0.02}
 --- !u!1 &6839083621912428839
 GameObject:
   m_ObjectHideFlags: 0

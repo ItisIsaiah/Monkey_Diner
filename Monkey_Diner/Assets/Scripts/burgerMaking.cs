@@ -9,7 +9,7 @@ public class burgerMaking : MonoBehaviour
     Rigidbody foodRB;
     bool isfood;
     Snapping script;
-    string[] typeFoods=new string[3];
+    public string[] typeFoods=new string[3];
     int stuffCount;
 
     void Start()
@@ -28,13 +28,17 @@ public class burgerMaking : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Food"))
         {
-            //typeFoods[stuffCount]=other.gameObject.name;
-            //stuffCount++;
+            typeFoods[stuffCount]=other.gameObject.name;
+            stuffCount++;
             other.gameObject.tag = "Snapped";
             script=other.gameObject.GetComponent<Snapping>();
             script.Snap(snapPoint);
             snapPoint.position += Vector3.up * .002f;
-           
+
+            
+
+            other.gameObject.transform.parent = transform;
+
         }
     }
 }
