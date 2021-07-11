@@ -68,23 +68,27 @@ public class CustomerTrail : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        goTo();
+
+
         
-
-
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(movespot[whereTo].position.x,transform.position.y,movespot[whereTo].position.z), speed*Time.deltaTime);
+    }
+    public void goTo()
+    {
+        
         //Debug.Log("I AM GOING "+ whereTo );
-        if (Vector3.Distance(transform.position, movespot[whereTo].position) < 5f)
+        if (Vector2.Distance(transform.position, movespot[whereTo].position) < .25f)
         {
             if (goAway)
             {
-                
-                whereTo = thing.movespots.Length-1;
+
+                whereTo = thing.movespots.Length - 1;
             }
         }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(movespot[whereTo].position.x, transform.position.y, movespot[whereTo].position.z), speed * Time.deltaTime);
+        }
     }
 
     public bool Compare(string[] foodGave)

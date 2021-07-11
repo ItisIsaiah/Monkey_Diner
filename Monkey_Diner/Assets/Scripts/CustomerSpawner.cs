@@ -6,11 +6,17 @@ public class CustomerSpawner : MonoBehaviour
 {
     public Transform door;
     public Transform[] movespots;
+    public GameLoop gl;
+
+
     public int[] prevSpots = new int[5];
     public int randomSpot;
     public int orderNumber;
     public Object customer;
     Transform spawnPoint;
+
+
+
     int customerCount;
     float TimetillSpawn = 5f;
     float curTime;
@@ -54,7 +60,9 @@ public class CustomerSpawner : MonoBehaviour
             orderNumber = Random.Range(0, 2);
             Instantiate(customer, spawnPoint);
             customerCount++;
-            
+
+            gl.UpdateUI(0,customerCount);
+
             curTime = 0;
 
             

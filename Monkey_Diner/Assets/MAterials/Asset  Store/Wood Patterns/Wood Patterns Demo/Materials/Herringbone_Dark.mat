@@ -9,11 +9,11 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Herringbone_Dark
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _METALLICGLOSSMAP _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
+  m_ShaderKeywords: _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 2050
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses: []
@@ -22,7 +22,7 @@ Material:
     m_TexEnvs:
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 8bf24b75e3e7d8c4e87a09c24ba4f9ea, type: 3}
-        m_Scale: {x: 4, y: 4}
+        m_Scale: {x: 6.55, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: d7846ac490743eb4f92186589b3dd7d1, type: 3}
@@ -46,7 +46,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 8bf24b75e3e7d8c4e87a09c24ba4f9ea, type: 3}
-        m_Scale: {x: 4, y: 4}
+        m_Scale: {x: 6.55, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 2800000, guid: c714009deb3353e4ab7c3224ad5a257e, type: 3}
@@ -110,7 +110,6 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-  m_BuildTextureStacks: []
 --- !u!114 &7642358466584228045
 MonoBehaviour:
   m_ObjectHideFlags: 11
