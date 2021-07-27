@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 929908650339320662}
   - component: {fileID: 6872935982227126549}
   - component: {fileID: 312765608476375633}
+  - component: {fileID: 2474415013224213297}
   m_Layer: 0
   m_Name: Topbun
   m_TagString: Food
@@ -202,3 +203,15 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 1
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!114 &2474415013224213297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2280037374486264955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29489ccd2fca2d54e84d48ba6cffa8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

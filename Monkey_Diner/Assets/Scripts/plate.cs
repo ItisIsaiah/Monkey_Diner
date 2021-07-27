@@ -13,6 +13,7 @@ public class plate : MonoBehaviour
     {
         getit=GetComponentInParent<chair>();
         monkey = getit.monkeyScript;
+        Debug.Log(monkey.tag);
     }
 
     // Update is called once per frame

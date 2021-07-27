@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 633647937131385435}
   - component: {fileID: 1192498206369523191}
   - component: {fileID: 2356235942862009500}
+  - component: {fileID: 8571722316836226563}
   m_Layer: 8
   m_Name: lettuce
   m_TagString: Food
@@ -202,3 +203,15 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 1
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!114 &8571722316836226563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3996919761559407034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29489ccd2fca2d54e84d48ba6cffa8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

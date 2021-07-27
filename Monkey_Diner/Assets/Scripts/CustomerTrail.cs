@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -93,7 +94,13 @@ public class CustomerTrail : MonoBehaviour
 
     public bool Compare(string[] foodGave)
     {
+
         for(int i=0;i<3;i++){
+
+            Array.Sort(topfoods);
+            Array.Sort(foodGave);
+            Debug.Log(topfoods);
+            Debug.Log(foodGave);
             if (topfoods[i]==foodGave[i])
             {
                
@@ -112,3 +119,4 @@ public class CustomerTrail : MonoBehaviour
         return true;
     }
 }
+

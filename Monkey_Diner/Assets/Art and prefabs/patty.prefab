@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1710372745022928540}
   - component: {fileID: 4728417859111925205}
   - component: {fileID: 6956669154270375576}
+  - component: {fileID: 2204047189701985492}
   m_Layer: 8
   m_Name: patty
   m_TagString: Food
@@ -169,6 +170,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.81, y: 2.65, z: 4.75}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2204047189701985492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653243645387071548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29489ccd2fca2d54e84d48ba6cffa8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3992594911048618861
 GameObject:
   m_ObjectHideFlags: 0

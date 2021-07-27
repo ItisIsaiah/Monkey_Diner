@@ -30,9 +30,9 @@ public class burgerMaking : MonoBehaviour
         {
             typeFoods[stuffCount]=other.gameObject.name;
             stuffCount++;
-            other.gameObject.tag = "Snapped";
-            script=other.gameObject.GetComponent<Snapping>();
-            script.Snap(snapPoint);
+           // other.gameObject.tag = "Snapped";
+           // script=other.gameObject.GetComponent<Snapping>();
+           // script.Snap(snapPoint);
             snapPoint.position += Vector3.up * .002f;
 
             

@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class CrateInteraction : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public string theObject;
+    public Transform spawnPoint;
+    ObjectPooler objectPooler;
+    private void Start()
     {
-        
+        objectPooler = ObjectPooler.Instance;
+       
     }
-
-    // Update is called once per frame
-    void Update()
+    public void SpawntheObject()
     {
-        
+       objectPooler.SpawnedFromQueue(theObject,spawnPoint.position,Quaternion.identity);
+    }
+    private void Update()
+    {
+       // SpawntheObject();
     }
 }

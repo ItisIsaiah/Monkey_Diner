@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7847621662730950589}
   - component: {fileID: 218178883452856828}
   - component: {fileID: 5909692046272598660}
+  - component: {fileID: 4535277952734915332}
   m_Layer: 8
   m_Name: Cheese
   m_TagString: Food
@@ -202,3 +203,15 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 1
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!114 &4535277952734915332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4089114425735600399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29489ccd2fca2d54e84d48ba6cffa8eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
