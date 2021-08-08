@@ -25,7 +25,7 @@ public class StoveCooking : MonoBehaviour
          
         
 
-        Debug.Log(time);
+      
         time += Time.deltaTime/10;
         mat.SetFloat("_ColorValue", time);
         

@@ -24,6 +24,7 @@ public class CustomerTrail : MonoBehaviour
     public  string[] topfoods=new string[3];
     public string[] foodGiven;
 
+    float time;
 
 
 
@@ -36,12 +37,11 @@ public class CustomerTrail : MonoBehaviour
         whereTo = thing.randomSpot;
         orderNumber = thing.orderNumber;
 
-        //  randomSpot = Random.Range(0, movespots.Length);
         waitTIme = startWaitTime;
         goAway = false;
-
+        time = 10;
         
-
+        
 
         chatbubble=Instantiate(chatbubble, bubblePoint);
         bubble = GetComponentInChildren<ChatB>();
@@ -69,22 +69,34 @@ public class CustomerTrail : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        goTo();
-
+        
+        if (time<=0)
+        {
+            goTo(movespot.Length);
+        }
+        else if(time>0)
+        {
+            goTo(whereTo);
+            time -= Time.deltaTime;
+        }
+        
+        
+        
 
         
     }
-    public void goTo()
+    public void goTo(int whereTo)
     {
         
         //Debug.Log("I AM GOING "+ whereTo );
-        if (Vector2.Distance(transform.position, movespot[whereTo].position) < .25f)
+        if (Vector2.Distance(transform.position, movespot[whereTo-1].position) < .25f)
         {
             if (goAway)
             {
 
                 whereTo = thing.movespots.Length - 1;
             }
+            return;
         }
         else
         {

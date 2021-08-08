@@ -18,20 +18,22 @@ public class Snapping : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {/*
+    {
         if (isSnapping)
         {
             
             transform.position = snapPoint.position;
         }
-        */
+        
     }
 
-    public void Snap(Transform snap)
+    public void Snap(Transform snap, GameObject daParent)
     {
         isSnapping = true;
         snapPoint = snap;
         Destroy(boxCollider);
+        this.transform.eulerAngles = new Vector3(0, 0, 0f);
+        this.transform.parent = daParent.transform;
         rb.freezeRotation = true;
     }
 }

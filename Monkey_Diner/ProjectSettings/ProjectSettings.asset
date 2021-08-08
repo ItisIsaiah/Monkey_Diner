@@ -138,6 +138,9 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: -5871433842743080559, guid: cfcd142dee7240944883a5d744265cb2, type: 2}
+  - {fileID: 9128277776524009209, guid: eeeb862de7295394698da19aac70a5df, type: 2}
   - {fileID: 11400000, guid: 3f9b84012df99794da0e35a90575ceb3, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -156,6 +159,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.ScreenNukeGames.LilliesDiner
     Standalone: com.DefaultCompany.MonkeyDiner
   buildNumber:
     Standalone: 0
@@ -740,7 +744,7 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 1
+  activeInputHandler: 2
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []

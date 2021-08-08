@@ -21,10 +21,12 @@ public class plate : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.name.Substring(0,other.name.Length-3)=="bottbun")
+        Debug.Log("SOMETHINGS IN THE TRIGGER!" + other.gameObject.name);
+        if (other.gameObject.name=="bottbun(Clone)")
         {
+            Debug.Log("THE TRIGGER REGISTERED THE BUN");
             foodWanted=other.gameObject.GetComponent<burgerMaking>();
             string[] foodGiven = foodWanted.typeFoods;
             monkey.Compare(foodGiven);
