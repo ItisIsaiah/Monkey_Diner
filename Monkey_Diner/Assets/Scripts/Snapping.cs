@@ -34,6 +34,7 @@ public class Snapping : MonoBehaviour
         Destroy(boxCollider);
         this.transform.eulerAngles = new Vector3(0, 0, 0f);
         this.transform.parent = daParent.transform;
-        rb.freezeRotation = true;
+        //  rb.freezeRotation = true;
+        gameObject.layer = 9;
     }
 }

@@ -7,12 +7,13 @@ public class plate : MonoBehaviour
     burgerMaking foodWanted;
     chair getit;
     CustomerTrail monkey;
-    
+    bool Compared;
     // Start is called before the first frame update
     void Start()
     {
         getit=GetComponentInParent<chair>();
         monkey = getit.monkeyScript;
+        Compared = false;
         Debug.Log(monkey.tag);
     }
 
@@ -30,8 +31,17 @@ public class plate : MonoBehaviour
             foodWanted=other.gameObject.GetComponent<burgerMaking>();
             string[] foodGiven = foodWanted.typeFoods;
             monkey.Compare(foodGiven);
-
+            Compared = true;
+            other.gameObject.SetActive(false);
             
         }
+        if (other.tag == "Food" && Compared == true)
+        {
+            other.gameObject.SetActive(false);
+            Compared = false;
+        }
+        
     }
+
+    
 }

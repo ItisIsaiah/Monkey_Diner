@@ -17,7 +17,7 @@ public class CustomerSpawner : MonoBehaviour
 
 
 
-    int customerCount;
+    public int customerCount;
     float TimetillSpawn = 5f;
     float curTime;
     int increment = 0;

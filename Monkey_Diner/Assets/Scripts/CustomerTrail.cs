@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CustomerTrail : MonoBehaviour
 {
+    #region Shit ton Of variables
     public float speed;
     public bool goAway;
     public CustomerSpawner thing;
@@ -27,8 +28,8 @@ public class CustomerTrail : MonoBehaviour
     float time;
 
 
-
-
+    GameLoop gameLoop;
+    #endregion
 
     void Start()
     {
@@ -39,9 +40,9 @@ public class CustomerTrail : MonoBehaviour
 
         waitTIme = startWaitTime;
         goAway = false;
-        time = 10;
-        
-        
+        time = 120;
+
+        gameLoop = GameLoop.Instance;
 
         chatbubble=Instantiate(chatbubble, bubblePoint);
         bubble = GetComponentInChildren<ChatB>();
@@ -72,7 +73,7 @@ public class CustomerTrail : MonoBehaviour
         
         if (time<=0)
         {
-            goTo(movespot.Length);
+            goTo(movespot.Length-1);
         }
         else if(time>0)
         {
@@ -85,17 +86,17 @@ public class CustomerTrail : MonoBehaviour
 
         
     }
+    #region Movement for Customer
     public void goTo(int whereTo)
     {
-        
-        //Debug.Log("I AM GOING "+ whereTo );
-        if (Vector2.Distance(transform.position, movespot[whereTo-1].position) < .25f)
+        if (goAway)
         {
-            if (goAway)
-            {
-
-                whereTo = thing.movespots.Length - 1;
-            }
+            whereTo =movespot.Length-1;
+        }
+        //Debug.Log("I AM GOING "+ whereTo );
+        if (Vector2.Distance(transform.position, movespot[whereTo].position) < .05f)
+        {
+            
             return;
         }
         else
@@ -103,10 +104,12 @@ public class CustomerTrail : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(movespot[whereTo].position.x, transform.position.y, movespot[whereTo].position.z), speed * Time.deltaTime);
         }
     }
+    #endregion
 
+    #region Compare function
     public bool Compare(string[] foodGave)
     {
-
+        Debug.Log("THE COMPARE PART WORKS");
         for(int i=0;i<3;i++){
 
             Array.Sort(topfoods);
@@ -115,7 +118,7 @@ public class CustomerTrail : MonoBehaviour
             Debug.Log(foodGave);
             if (topfoods[i]==foodGave[i])
             {
-               
+                
                 continue;
             }
             else
@@ -123,12 +126,21 @@ public class CustomerTrail : MonoBehaviour
 
                 chatbubble.SetActive(false);
                 ResultBubble = Instantiate(ResultBubble, bubblePoint);
+
+
+                gameLoop.UpdateUI(gameLoop.score, gameLoop.customerCount--);
+                thing.customerCount--;
+                goAway = true;
                 return false;
             }
         }
+        goAway = true;
+        gameLoop.UpdateUI(gameLoop.score + 500, gameLoop.customerCount--);
+        thing.customerCount--;
         ResultBubble = Instantiate(ResultBubble, bubblePoint);
         chatbubble.SetActive(false);
         return true;
     }
+    #endregion
 }
 

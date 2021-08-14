@@ -32,8 +32,8 @@ public class burgerMaking : MonoBehaviour
             stuffCount++;
            other.gameObject.tag = "Snapped";
            script=other.gameObject.GetComponent<Snapping>();
-           script.Snap(snapPoint,this.gameObject);
-            snapPoint.position += Vector3.up * .002f;
+           script.Snap(snapPoint,gameObject);
+           snapPoint.position += Vector3.up * .002f;
 
             
 

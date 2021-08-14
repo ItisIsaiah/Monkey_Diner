@@ -9,6 +9,7 @@ using TMPro;
 
 public class GameLoop : MonoBehaviour
 {
+    #region Variables
     public Text scoreText;
     public Text timeText;
     public Text customerText;
@@ -18,6 +19,16 @@ public class GameLoop : MonoBehaviour
     public int score;
     public float time = 60f;
     public int customerCount;
+    #endregion
+
+    #region SingleTon
+    public static GameLoop Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
+    #endregion
+
 
 
     // Start is called before the first frame update

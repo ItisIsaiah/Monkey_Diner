@@ -44,7 +44,10 @@ public class chair : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        paperplate.SetActive(false);
+        if (other.tag == "Customer")
+        {
+            paperplate.SetActive(false);
+        }
     }
 
 
