@@ -142,5 +142,14 @@ public class CustomerTrail : MonoBehaviour
         return true;
     }
     #endregion
+
+    public void selfDestruct()
+    {
+        if(goAway==true){
+            
+            Destroy(this);
+        }
+        
+    }
 }
 
