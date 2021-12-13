@@ -24,7 +24,7 @@ public class plate : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("SOMETHINGS IN THE TRIGGER!" + other.gameObject.name);
+        //Debug.Log("SOMETHINGS IN THE TRIGGER!" + other.gameObject.name);
         if (other.gameObject.name=="bottbun(Clone)")
         {
             Debug.Log("THE TRIGGER REGISTERED THE BUN");

@@ -12,10 +12,12 @@ public class burgerMaking : MonoBehaviour
     public string[] typeFoods=new string[3];
     int stuffCount;
 
+    public GameObject cubeDropZone;
     void Start()
     {
         isfood = false;
         stuffCount = 0;
+       
     }
 
     // Update is called once per frame
@@ -30,14 +32,14 @@ public class burgerMaking : MonoBehaviour
         {
             typeFoods[stuffCount]=other.gameObject.name;
             stuffCount++;
-           other.gameObject.tag = "Snapped";
+           other.gameObject.layer = 9;
            script=other.gameObject.GetComponent<Snapping>();
-           script.Snap(snapPoint,gameObject);
-           snapPoint.position += Vector3.up * .002f;
+           script.Snap(gameObject);
+           // transform.position = new Vector3(transform.position.x, transform.position.y + .2f, transform.position.z);
 
-            
 
-           
+
+
 
         }
     }

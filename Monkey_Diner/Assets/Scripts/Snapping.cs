@@ -4,37 +4,46 @@ using UnityEngine;
 
 public class Snapping : MonoBehaviour
 {
+    public GameObject CubeDropZone;
     Transform snapPoint;
     bool isSnapping;
     Collider boxCollider;
     Rigidbody rb;
+    GameObject daParent;
     // Start is called before the first frame update
     void Start()
     {
         isSnapping = false;
         boxCollider = GetComponent<BoxCollider>();
         rb = GetComponent<Rigidbody>();
+        CubeDropZone.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+   
+    
+    public void Snap( GameObject Parent)
     {
-        if (isSnapping)
+
+        daParent = Parent;
+        if (name!= "Cheese") 
+            transform.eulerAngles = new Vector3(0, 0f, 0f);
+       //transform.parent = daParent.transform;=-+
+       CubeDropZone.SetActive(true);
+      // daParent.transform.position = new Vector3(transform.position.x, transform.position.y + .2f, transform.position.z);
+    }
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 8)
         {
-            
-            transform.position = snapPoint.position;
+            Snapping script = other.gameObject.GetComponent<Snapping>();
+            script.Snap(daParent);
+            other.gameObject.layer = 9;
         }
-        
     }
 
-    public void Snap(Transform snap, GameObject daParent)
-    {
-        isSnapping = true;
-        snapPoint = snap;
-        Destroy(boxCollider);
-        this.transform.eulerAngles = new Vector3(0, 0, 0f);
-        this.transform.parent = daParent.transform;
-        //  rb.freezeRotation = true;
-        gameObject.layer = 9;
-    }
+
+
 }
