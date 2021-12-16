@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.XR.Interaction.Toolkit;
 public class Snapping : MonoBehaviour
 {
     public GameObject CubeDropZone;
+    
     Transform snapPoint;
     bool isSnapping;
     Collider boxCollider;
     Rigidbody rb;
     GameObject daParent;
+    XRSocketInteractor CubeScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,19 +19,20 @@ public class Snapping : MonoBehaviour
         boxCollider = GetComponent<BoxCollider>();
         rb = GetComponent<Rigidbody>();
         CubeDropZone.SetActive(false);
+        CubeScript =CubeDropZone.gameObject.GetComponent<XRSocketInteractor>();
+      //  CubeScript.socketActive = false;
     }
 
    
     
     public void Snap( GameObject Parent)
     {
-
+        
         daParent = Parent;
-        if (name!= "Cheese") 
-            transform.eulerAngles = new Vector3(0, 0f, 0f);
-       //transform.parent = daParent.transform;=-+
-       CubeDropZone.SetActive(true);
-      // daParent.transform.position = new Vector3(transform.position.x, transform.position.y + .2f, transform.position.z);
+        CubeDropZone.SetActive(true);
+        //CubeScript.socketActive = true;
+        
+     
     }
 
 
@@ -44,6 +47,7 @@ public class Snapping : MonoBehaviour
         }
     }
 
+    
 
 
 }
