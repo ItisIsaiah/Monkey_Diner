@@ -34,7 +34,7 @@ public class chair : MonoBehaviour
         {
             monkey = other.gameObject;
             monkeyScript = monkey.GetComponent<CustomerTrail>();
-            monkeyChoice = monkeyScript.topfoods;
+            //monkeyChoice = monkeyScript.topfoods;
             paperplate.SetActive(true);
            // Debug.Log("I WORKED");
         }

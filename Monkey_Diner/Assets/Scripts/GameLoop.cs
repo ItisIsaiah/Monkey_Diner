@@ -10,10 +10,11 @@ using TMPro;
 public class GameLoop : MonoBehaviour
 {
     #region Variables
-    public Text scoreText;
-    public Text timeText;
-    public Text customerText;
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI timeText;
+    public TextMeshProUGUI customerText;
     public TextMeshProUGUI endText;
+    
     public SceneManagerThing sceneManagerThing;
     //The actual trackers
     public int score;
@@ -34,8 +35,10 @@ public class GameLoop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       
         endText = FindObjectOfType<TextMeshProUGUI>();
         endText.text = "";
+        
     }
 
     // Update is called once per frame
@@ -59,7 +62,19 @@ public class GameLoop : MonoBehaviour
 
         customerText.text = "Customers:" + customerCount;
     }
+/*
+    public IEnumerator StartOfGame()
+    {
+        float countdown = 3;
+        while (countdown>0) {
+            countdown -= Time.deltaTime;
+            scoreText.text = "READY?"+countdown;
+                }
+        
+        yield return new WaitForSeconds(3f);
 
+    }
+  */
     public IEnumerator EndOfGame()
     {
         if (time <= 0) {

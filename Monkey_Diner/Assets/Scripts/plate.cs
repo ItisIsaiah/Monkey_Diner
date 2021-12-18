@@ -29,7 +29,7 @@ public class plate : MonoBehaviour
         {
             Debug.Log("THE TRIGGER REGISTERED THE BUN");
             foodWanted=other.gameObject.GetComponent<burgerMaking>();
-            string[] foodGiven = foodWanted.typeFoods;
+            ArrayList foodGiven = foodWanted.topFoods;
             monkey.Compare(foodGiven);
             Compared = true;
             other.gameObject.SetActive(false);

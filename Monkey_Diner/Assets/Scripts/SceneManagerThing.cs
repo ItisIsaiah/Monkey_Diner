@@ -13,6 +13,6 @@ public class SceneManagerThing : MonoBehaviour
     
     public void LoadLosingScreen()
     {
-        SceneManager.LoadScene("Game Over");
+       // SceneManager.LoadScene("Game Over");
     }
 }

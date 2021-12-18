@@ -2,45 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class burgerMaking : MonoBehaviour
+public class burgerMaking:Snapping 
 {
-    public Transform snapPoint;
-    GameObject food;
-    Rigidbody foodRB;
-    bool isfood;
-    Snapping script;
-    public string[] typeFoods=new string[3];
-    int stuffCount;
+    
+    
+   
+    public ArrayList topFoods = new ArrayList();
+    ArrayList redundancy = new ArrayList();
+   // int stuffCount;
 
-    public GameObject cubeDropZone;
+   
     void Start()
     {
-        isfood = false;
-        stuffCount = 0;
+        base.Start();
+        
+        
+      //  stuffCount = 0;
        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Food"))
+
+        if (this.gameObject.layer==9)
         {
-            typeFoods[stuffCount]=other.gameObject.name;
-            stuffCount++;
-           other.gameObject.layer = 9;
-           script=other.gameObject.GetComponent<Snapping>();
-           script.Snap(gameObject);
-           // transform.position = new Vector3(transform.position.x, transform.position.y + .2f, transform.position.z);
-
-
-
-
-
+            this.gameObject.layer = 8;
         }
     }
+    public override void SnapCheck(Collider other)
+    {
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //Debug.Log(other.gameObject.name);
+        base.SnapCheck(other);
+        if (other.CompareTag("Snapped")) {
+            
+
+            for (int i = 0; i <redundancy.Count; i++)
+            {
+                if (topFoods.Contains(redundancy[i]))
+                {
+                  //  Debug.Log("checked"+redundancy[i]);
+                    return;
+                }
+            }
+            topFoods.Add(other.transform.root.gameObject.name);
+            redundancy.Add(other.transform.root.gameObject.name);
+           Debug.Log(other.transform.root.gameObject.name);
+        }
+        
+    }
+
 }
+

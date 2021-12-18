@@ -4,47 +4,49 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 public class Snapping : MonoBehaviour
 {
-    public GameObject CubeDropZone;
+
+    public GameObject UpperDropZone;
+    public Collider UpperCollider;
+   
+  
+     public GameObject LowerDropZone;
+     public Collider lowerCollider;
     
-    Transform snapPoint;
-    bool isSnapping;
-    Collider boxCollider;
-    Rigidbody rb;
     GameObject daParent;
-    XRSocketInteractor CubeScript;
+   
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        isSnapping = false;
-        boxCollider = GetComponent<BoxCollider>();
-        rb = GetComponent<Rigidbody>();
-        CubeDropZone.SetActive(false);
-        CubeScript =CubeDropZone.gameObject.GetComponent<XRSocketInteractor>();
-      //  CubeScript.socketActive = false;
-    }
+
+        UpperDropZone.SetActive(false);
+        LowerDropZone.SetActive(false);
+        
+      }
 
    
     
-    public void Snap( GameObject Parent)
-    {
-        
-        daParent = Parent;
-        CubeDropZone.SetActive(true);
-        //CubeScript.socketActive = true;
-        
-     
-    }
+ 
 
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 8)
+        SnapCheck(other);
+    }
+
+    public virtual void SnapCheck(Collider other)
+    {
+       // Debug.Log(name + "is  grabbing" + other.name);
+        if (other.CompareTag("Food"))
         {
-            Snapping script = other.gameObject.GetComponent<Snapping>();
-            script.Snap(daParent);
-            other.gameObject.layer = 9;
+                other.gameObject.tag = "Snapped";
+                UpperDropZone.SetActive(true);
+                LowerDropZone.SetActive(true);
+                other.gameObject.layer = 9;
+                
+
         }
+
     }
 
     

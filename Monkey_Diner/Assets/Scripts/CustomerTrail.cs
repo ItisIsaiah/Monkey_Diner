@@ -22,7 +22,7 @@ public class CustomerTrail : MonoBehaviour
     
 
     public int orderNumber;
-    public  string[] topfoods=new string[3];
+    public  ArrayList topfoods=new ArrayList();
     public string[] foodGiven;
 
     float time;
@@ -107,23 +107,24 @@ public class CustomerTrail : MonoBehaviour
     #endregion
 
     #region Compare function
-    public bool Compare(string[] foodGave)
+    public bool Compare(ArrayList foodGave)
     {
         Debug.Log("THE COMPARE PART WORKS");
-        for(int i=0;i<3;i++){
+        
+        object[] obj1 = topfoods.ToArray();
+        object[] obj2 = foodGave.ToArray();
 
-            Array.Sort(topfoods);
-            Array.Sort(foodGave);
-            Debug.Log(topfoods);
-            Debug.Log(foodGave);
-            if (topfoods[i]==foodGave[i])
-            {
-                
-                continue;
-            }
-            else
-            {
 
+
+        Array.Sort(obj1);
+        Array.Sort(obj2);
+        Debug.Log(topfoods);
+        Debug.Log(foodGave);
+        for (int i=0;i<obj1.Length;i++){
+
+           
+            if (topfoods[i]!=foodGave[i])
+            {
                 chatbubble.SetActive(false);
                 ResultBubble = Instantiate(ResultBubble, bubblePoint);
 
@@ -133,6 +134,7 @@ public class CustomerTrail : MonoBehaviour
                 goAway = true;
                 return false;
             }
+         
         }
         goAway = true;
         gameLoop.UpdateUI(gameLoop.score + 500, gameLoop.customerCount--);
