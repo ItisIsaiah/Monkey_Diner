@@ -42,7 +42,7 @@ public class Snapping : MonoBehaviour
                 other.gameObject.tag = "Snapped";
                 UpperDropZone.SetActive(true);
                 LowerDropZone.SetActive(true);
-                other.gameObject.layer = 9;
+               
                 
 
         }

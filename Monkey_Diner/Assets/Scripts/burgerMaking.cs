@@ -25,10 +25,7 @@ public class burgerMaking:Snapping
     void Update()
     {
 
-        if (this.gameObject.layer==9)
-        {
-            this.gameObject.layer = 8;
-        }
+        
     }
     public override void SnapCheck(Collider other)
     {
@@ -37,22 +34,21 @@ public class burgerMaking:Snapping
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other.gameObject.name);
         base.SnapCheck(other);
-        if (other.CompareTag("Snapped")) {
-            
 
+        
+        if (other.CompareTag("Snapped")) {   
             for (int i = 0; i <redundancy.Count; i++)
             {
                 if (topFoods.Contains(redundancy[i]))
                 {
-                  //  Debug.Log("checked"+redundancy[i]);
                     return;
                 }
             }
             topFoods.Add(other.transform.root.gameObject.name);
             redundancy.Add(other.transform.root.gameObject.name);
-           Debug.Log(other.transform.root.gameObject.name);
+            other.transform.root.gameObject.layer = LayerMask.NameToLayer("Default");
+            Debug.Log(other.transform.root.gameObject.name);
         }
         
     }

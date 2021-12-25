@@ -6,12 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 0d7a181816741284eab86907b5781326
+  - enabled: 1
     path: Assets/Scenes/Diner1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Game Over.unity
     guid: 1bdffd5ba6f4bb94fb3e0da0273b2b7a
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3f9b84012df99794da0e35a90575ceb3, type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: eeeb862de7295394698da19aac70a5df, type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: cfcd142dee7240944883a5d744265cb2, type: 2}
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3f9b84012df99794da0e35a90575ceb3,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: eeeb862de7295394698da19aac70a5df,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: cfcd142dee7240944883a5d744265cb2,
+      type: 2}
