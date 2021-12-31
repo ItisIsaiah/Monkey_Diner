@@ -21,14 +21,14 @@ public class LocoController : MonoBehaviour
     void Update()
     {
        
-        if (rightTeleportRay && CheckIfActivated(rightTeleportRay))
+        if (rightTeleportRay  )
         {
-            rightTeleportRay.gameObject.SetActive(EnableLeftTeleport);
+            rightTeleportRay.gameObject.SetActive(CheckIfActivated(rightTeleportRay));
         }
-        if (leftTeleportRay && CheckIfActivated(leftTeleportRay))
+        if (leftTeleportRay  )
         {
           
-            leftTeleportRay.gameObject.SetActive(EnableRightTeleport );
+            leftTeleportRay.gameObject.SetActive(CheckIfActivated(leftTeleportRay));
         }
     }
 
@@ -36,6 +36,8 @@ public class LocoController : MonoBehaviour
     {
         InputHelpers.IsPressed(controller.inputDevice, teleportActivationButton, out bool isAxtivated, activationThreshold);
 
+        Debug.Log(isAxtivated);
         return isAxtivated;
+        
     }
 }

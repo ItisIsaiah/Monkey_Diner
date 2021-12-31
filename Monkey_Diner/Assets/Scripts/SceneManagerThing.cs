@@ -22,6 +22,6 @@ public class SceneManagerThing : MonoBehaviour
         SceneManager.LoadScene("Game Over");
     }
 
-    //Why is this project even open source I should really lock this up so no one steals my game
+    
 
 }

@@ -11,13 +11,15 @@ public class Snapping : MonoBehaviour
   
      public GameObject LowerDropZone;
      public Collider lowerCollider;
-    
+     XRGrabInteractable grab;
+
+
     GameObject daParent;
    
     // Start is called before the first frame update
     public void Start()
     {
-
+        grab = GetComponent<XRGrabInteractable>(); 
         UpperDropZone.SetActive(false);
         LowerDropZone.SetActive(false);
         
@@ -42,11 +44,20 @@ public class Snapping : MonoBehaviour
                 other.gameObject.tag = "Snapped";
                 UpperDropZone.SetActive(true);
                 LowerDropZone.SetActive(true);
-               
+            if (gameObject.name!="bottbun"&&CompareTag("Snapped"))
+            {
+                StartCoroutine(delayeddisable());
+            }
                 
 
         }
 
+    }
+
+    IEnumerator  delayeddisable()
+    {
+        yield return new WaitForSeconds(4f);
+        grab.enabled = false;
     }
 
     
