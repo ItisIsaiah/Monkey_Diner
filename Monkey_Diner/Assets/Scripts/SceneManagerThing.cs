@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerThing : MonoBehaviour
 {
+    public int sceneSelection { get; set; } = 0;
+
     // Start is called before the first frame update
     public void NextLevel()
     {
@@ -22,6 +24,13 @@ public class SceneManagerThing : MonoBehaviour
         SceneManager.LoadScene("Game Over");
     }
 
-    
+    public void LoadSelectedScene() {
+        SceneManager.LoadScene(sceneSelection);
+    }
 
+    
+    public void LoadSceneDropdown(int val)
+    {
+        SceneManager.LoadScene(val);
+    }
 }
