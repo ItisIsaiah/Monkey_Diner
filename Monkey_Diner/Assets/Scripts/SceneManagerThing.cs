@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerThing : MonoBehaviour
 {
+
+#region singleton
+    public static SceneManagerThing instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    #endregion
     public int sceneSelection { get; set; } = 0;
 
     // Start is called before the first frame update
