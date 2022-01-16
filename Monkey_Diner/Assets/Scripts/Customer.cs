@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CustomerTrail : MonoBehaviour
 {
+    
     #region Shit ton Of variables
     public float speed;
     public bool goAway;
@@ -17,6 +18,7 @@ public class CustomerTrail : MonoBehaviour
     Transform[]  movespot;
     public Transform bubblePoint;
     ChatB bubble;
+    Resultbubble rbubble;
 
     public GameObject ResultBubble;
     
@@ -24,6 +26,7 @@ public class CustomerTrail : MonoBehaviour
     public int orderNumber;
     public  ArrayList topfoods=new ArrayList();
     public string[] foodGiven;
+    GameLoop gameManager;
 
     float time;
 
@@ -31,12 +34,16 @@ public class CustomerTrail : MonoBehaviour
     GameLoop gameLoop;
     #endregion
 
+    public enum Food
+    {
+        Burger,Pizza,Salad
+    }
     void Start()
     {
         thing = GetComponentInParent<CustomerSpawner>();
         movespot = thing.movespots;
         whereTo = thing.randomSpot;
-        orderNumber = thing.orderNumber;
+       
 
         waitTIme = startWaitTime;
         goAway = false;
@@ -45,24 +52,27 @@ public class CustomerTrail : MonoBehaviour
         gameLoop = GameLoop.Instance;
 
         chatbubble=Instantiate(chatbubble, bubblePoint);
-        bubble = GetComponentInChildren<ChatB>();
+        bubble = chatbubble.GetComponent<ChatB>();
+
+        ResultBubble = Instantiate(ResultBubble, bubblePoint);
+        Resultbubble rbubble = ResultBubble.GetComponent<Resultbubble>();
+        ResultBubble.SetActive(false);
 
 
+        // int food = UnityEngine.Random.Range(1, 3);
+        int food = 1;
 
-        Debug.Log(orderNumber);
-        if (orderNumber != 0)
+        switch (food)
         {
-            bubble.SetUp(ChatB.IconType.Lettuce);
-            topfoods[0] = "patty";
-            topfoods[1] = "lettuce";
-            topfoods[2] = "TopBun";
-        }
-        else
-        {
-            bubble.SetUp(ChatB.IconType.Cheese);
-            topfoods[0] = "patty";
-            topfoods[1] = "Cheese";
-            topfoods[2] = "TopBun";
+            case 1:
+                foodSelection(Food.Burger);
+                break;
+            case 2:
+                foodSelection(Food.Pizza);
+                break;
+            case 3:
+                foodSelection(Food.Salad);
+                break;
         }
 
     }
@@ -80,12 +90,12 @@ public class CustomerTrail : MonoBehaviour
             goTo(whereTo);
             time -= Time.deltaTime;
         }
-        
-        
-        
 
         
+
+
     }
+
     #region Movement for Customer
     public void goTo(int whereTo)
     {
@@ -107,44 +117,68 @@ public class CustomerTrail : MonoBehaviour
     #endregion
 
     #region Compare function
-    public bool Compare(ArrayList foodGave)
+    public void Result(bool result)
     {
-        Debug.Log("THE COMPARE PART WORKS");
-        
-        object[] obj1 = topfoods.ToArray();
-        object[] obj2 = foodGave.ToArray();
-
-
-
-        Array.Sort(obj1);
-        Array.Sort(obj2);
-        Debug.Log(topfoods);
-        Debug.Log(foodGave);
-        for (int i=0;i<obj1.Length;i++){
-
-           
-            if (topfoods[i]!=foodGave[i])
-            {
-                chatbubble.SetActive(false);
-                ResultBubble = Instantiate(ResultBubble, bubblePoint);
-
-
-                gameLoop.UpdateUI(gameLoop.score, gameLoop.customerCount--);
-                thing.customerCount--;
-                goAway = true;
-                return false;
-            }
-         
-        }
-        goAway = true;
-        gameLoop.UpdateUI(gameLoop.score + 500, gameLoop.customerCount--);
-        thing.customerCount--;
-        ResultBubble = Instantiate(ResultBubble, bubblePoint);
         chatbubble.SetActive(false);
-        return true;
+        ResultBubble.SetActive(true);
+        if (result==true)
+        {
+            rbubble.SetUp(Resultbubble.RightWrong.Right);
+        }
+        else{
+            rbubble.SetUp(Resultbubble.RightWrong.Wrong);
+        }
+        
+         goAway = true;
+
+
+
     }
     #endregion
+   void foodSelection(Food selection) {
+        switch (selection)
+        {
+            default:
+            case Food.Burger: 
+                Burger();
+                break;
 
+            case Food.Pizza:
+                Pizza();
+                break;
+            case Food.Salad:
+                Salad();
+                break;
+        }
+
+    }
+    
+void Burger()
+    {
+        orderNumber = UnityEngine.Random.Range(0, 2);
+        if (orderNumber != 0)
+        {
+            bubble.SetUp(ChatB.IconType.Lettuce);
+            topfoods[0] = "patty";
+            topfoods[1] = "lettuce";
+            topfoods[2] = "TopBun";
+        }
+        else
+        {
+            bubble.SetUp(ChatB.IconType.Cheese);
+            topfoods[0] = "patty";
+            topfoods[1] = "Cheese";
+            topfoods[2] = "TopBun";
+        }
+    }
+void Pizza()
+    {
+
+    }
+void Salad()
+    {
+
+    }
     public void selfDestruct()
     {
         if(goAway==true){

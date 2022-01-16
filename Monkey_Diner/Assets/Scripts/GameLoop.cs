@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 
 
@@ -10,11 +11,8 @@ using TMPro;
 public class GameLoop : MonoBehaviour
 {
     #region Variables
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI timeText;
-    public TextMeshProUGUI customerText;
-    public TextMeshProUGUI endText;
-    
+    public TextMeshProUGUI scoreText,timeText,customerText,endText;
+    public CustomerSpawner spawner;
     public SceneManagerThing sceneManagerThing;
     //The actual trackers
     public int score;
@@ -35,10 +33,10 @@ public class GameLoop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<CustomerSpawner>();
         endText = FindObjectOfType<TextMeshProUGUI>();
         endText.text = "";
-        
+        StartCoroutine(StartOfGame());
     }
 
     // Update is called once per frame
@@ -58,23 +56,41 @@ public class GameLoop : MonoBehaviour
 
     public void UpdateUI(double score, double customerCount)
     {
-        scoreText.text = "Score:" +score;
+        scoreText.text = "Score:" + score;
 
         customerText.text = "Customers:" + customerCount;
     }
-/*
-    public IEnumerator StartOfGame()
+    
+        public IEnumerator StartOfGame()
+        {
+           
+            yield return new WaitForSeconds(3f);
+            spawner.StartSpawning();
+        }
+      
+    public bool Compare(ArrayList foodGave,ArrayList foodhave)
     {
-        float countdown = 3;
-        while (countdown>0) {
-            countdown -= Time.deltaTime;
-            scoreText.text = "READY?"+countdown;
-                }
-        
-        yield return new WaitForSeconds(3f);
+        Debug.Log("THE COMPARE PART WORKS");
 
+        object[] obj1 = foodhave.ToArray();
+        object[] obj2 = foodGave.ToArray();
+        Array.Sort(obj1);
+        Array.Sort(obj2);
+        for (int i = 0; i < obj1.Length; i++)
+        {
+            if (foodhave[i] != foodGave[i])
+            {
+              UpdateUI(score, customerCount--); 
+                return false;
+            }
+
+        }
+       UpdateUI(score + 500, customerCount--);
+        return true;
     }
-  */
+
+
+
     public IEnumerator EndOfGame()
     {
         if (time <= 0) {

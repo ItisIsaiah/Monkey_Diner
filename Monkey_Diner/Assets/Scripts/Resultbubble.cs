@@ -38,10 +38,10 @@ public class Resultbubble : MonoBehaviour
             default:
             case RightWrong.Right:
                 return Right;
-                break;
+                
             case RightWrong.Wrong:
                 return Wrong;
-                break;
+                
           
         }
     }

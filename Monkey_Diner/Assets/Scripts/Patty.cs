@@ -23,8 +23,10 @@ public class Patty : MonoBehaviour
     {
         while (isCooking == true)
         {
+           
             Debug.Log("WE got to this point");
             float time = 0;
+            cookedPercentage = time * 10;
             Debug.Log("IM COOKING");
             time += Time.deltaTime / 10;
             material.SetFloat("Color Value", time);

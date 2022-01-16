@@ -8,6 +8,7 @@ public class plate : MonoBehaviour
     chair getit;
     CustomerTrail monkey;
     bool Compared;
+    GameLoop gameLoop;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,11 @@ public class plate : MonoBehaviour
             Debug.Log("THE TRIGGER REGISTERED THE BUN");
             foodWanted=other.gameObject.GetComponent<burgerMaking>();
             ArrayList foodGiven = foodWanted.topFoods;
-            monkey.Compare(foodGiven);
+            ArrayList foodWant = monkey.topfoods;
+
+            bool ans= gameLoop.Compare(foodGiven,foodWant);
+
+            monkey.Result(ans);
             Compared = true;
             other.gameObject.SetActive(false);
             

@@ -17,7 +17,11 @@ public class Door : MonoBehaviour
         if (other.tag == "Customer")
         {
             customer=other.GetComponent<CustomerTrail>();
-            customer.selfDestruct();
+            if (customer.goAway==true)
+            {
+                customer.selfDestruct();
+            }
+           
         }
     }
     // Update is called once per frame

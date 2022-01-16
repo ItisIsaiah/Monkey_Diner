@@ -1286,10 +1286,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0.07705283}
   m_LocalScale: {x: 0.004935686, y: 0.0049356865, z: 0.004935686}
   m_Children:
-  - {fileID: 2085348600}
   - {fileID: 1622203233}
   - {fileID: 397719062}
   - {fileID: 993667847}
+  - {fileID: 2085348600}
   m_Father: {fileID: 229508796}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -6641,7 +6641,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 266760219}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6670,8 +6670,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Customer Count
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bedac93710e5ac34f9214b30bf0c7e12, type: 2}
-  m_sharedMaterial: {fileID: -3134947956349009106, guid: bedac93710e5ac34f9214b30bf0c7e12, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b0aa55f76632526488dc1c6bbd8d1668, type: 2}
+  m_sharedMaterial: {fileID: 8415052920449055523, guid: b0aa55f76632526488dc1c6bbd8d1668, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9409,7 +9409,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 266760219}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9438,8 +9438,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'SCORE:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bedac93710e5ac34f9214b30bf0c7e12, type: 2}
-  m_sharedMaterial: {fileID: -3134947956349009106, guid: bedac93710e5ac34f9214b30bf0c7e12, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b0aa55f76632526488dc1c6bbd8d1668, type: 2}
+  m_sharedMaterial: {fileID: 8415052920449055523, guid: b0aa55f76632526488dc1c6bbd8d1668, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12243,7 +12243,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 266760219}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12274,8 +12274,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bedac93710e5ac34f9214b30bf0c7e12, type: 2}
-  m_sharedMaterial: {fileID: -3134947956349009106, guid: bedac93710e5ac34f9214b30bf0c7e12, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b0aa55f76632526488dc1c6bbd8d1668, type: 2}
+  m_sharedMaterial: {fileID: 8415052920449055523, guid: b0aa55f76632526488dc1c6bbd8d1668, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12856,7 +12856,6 @@ MonoBehaviour:
   - {fileID: 1801940612}
   - {fileID: 788454132}
   gl: {fileID: 1937345205}
-  prevSpots: 0000000000000000000000000000000000000000
   randomSpot: 0
   orderNumber: 0
   customer: {fileID: 6662861764846542256, guid: 98a6c5e33b11452449e9c85970e00e33, type: 3}
@@ -14390,6 +14389,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bef64367c278b847806d6ccd0d45c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 0}
+  slider: {fileID: 0}
+  progressBar: {fileID: 0}
 --- !u!1 &1953252193
 GameObject:
   m_ObjectHideFlags: 0
@@ -19739,7 +19741,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 266760219}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19768,8 +19770,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bedac93710e5ac34f9214b30bf0c7e12, type: 2}
-  m_sharedMaterial: {fileID: -3134947956349009106, guid: bedac93710e5ac34f9214b30bf0c7e12, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b0aa55f76632526488dc1c6bbd8d1668, type: 2}
+  m_sharedMaterial: {fileID: 8415052920449055523, guid: b0aa55f76632526488dc1c6bbd8d1668, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

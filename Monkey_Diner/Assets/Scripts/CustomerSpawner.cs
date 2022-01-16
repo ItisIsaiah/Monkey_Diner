@@ -9,12 +9,12 @@ public class CustomerSpawner : MonoBehaviour
     public GameLoop gl;
 
 
-    public int[] prevSpots = new int[5];
+    public Stack prevSpots;
     public int randomSpot;
     public int orderNumber;
     public Object customer;
     Transform spawnPoint;
-
+    bool started;
 
 
     public int customerCount;
@@ -24,48 +24,48 @@ public class CustomerSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        randomSpot = Random.Range(0, movespots.Length-2);
-        prevSpots[0] = randomSpot;
-        orderNumber = Random.Range(0, 2);
-        spawnPoint = GetComponent<Transform>();
-        movespots[movespots.Length - 1] = door;
-        Instantiate(customer,spawnPoint);
-        customerCount = 1;
-        curTime = 0;
+        started = false;
 
     }
 
+   public void  StartSpawning()
+    {
+       
+        randomSpot = Random.Range(0, movespots.Length - 2);
+        prevSpots.Push(randomSpot);
+   
+        spawnPoint = GetComponent<Transform>();
+        movespots[movespots.Length - 1] = door;
+        Instantiate(customer, spawnPoint);
+        customerCount = 1;
+        curTime = 0;
+        started = true;
+
+    }
     // Update is called once per frame
     void Update()
     {
-        curTime += Time.deltaTime;
-        //Debug.Log(curTime);
-        if (curTime >= TimetillSpawn && customerCount <=5)
-        {
-            randomSpot = Random.Range(0, movespots.Length-2);
-            for (int i =0; i<5;i++)
+        if (started) {
+            curTime += Time.deltaTime;
+            //Debug.Log(curTime);
+            if (curTime >= TimetillSpawn && customerCount <= 5)
             {
-                if (prevSpots[i] == randomSpot)
+                if (prevSpots.Contains(randomSpot))
                 {
-                    randomSpot++;
-                    break;
+                    randomSpot = Random.Range(0, movespots.Length - 2);
+                    prevSpots.Push(randomSpot);
                 }
-                
+
+
+                Instantiate(customer, spawnPoint);
+                customerCount++;
+
+                gl.UpdateUI(0, customerCount);
+
+                curTime = 0;
+
+
             }
-            prevSpots[increment]= randomSpot;
-            increment++;
-            if (increment>=5){
-                increment = 0;
-            }
-            orderNumber = Random.Range(0, 2);
-            Instantiate(customer, spawnPoint);
-            customerCount++;
-
-            gl.UpdateUI(0,customerCount);
-
-            curTime = 0;
-
-            
         }
     }
 }
