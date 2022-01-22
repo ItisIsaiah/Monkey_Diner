@@ -42,7 +42,7 @@ public class SceneManagerThing : MonoBehaviour
 
     public void LoadSelectedScene()
     {
-        LoadLevel(sceneSelection+1);
+        LoadLevel(sceneSelection);
 
     }
 
@@ -59,7 +59,7 @@ public class SceneManagerThing : MonoBehaviour
     }
     IEnumerator LoadAsyncron(int sceneIndex)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneSelection);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneSelection+1);
         loadingScreen.SetActive(true);
         while (!operation.isDone)
         {

@@ -33,7 +33,7 @@ public class GameLoop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawner = GameObject.FindGameObjectWithTag("Spawner").GetComponent<CustomerSpawner>();
+        spawner = GetComponentInChildren<CustomerSpawner>();
         endText = FindObjectOfType<TextMeshProUGUI>();
         endText.text = "";
         StartCoroutine(StartOfGame());
@@ -63,9 +63,10 @@ public class GameLoop : MonoBehaviour
     
         public IEnumerator StartOfGame()
         {
-           
+        Debug.Log("Started");
             yield return new WaitForSeconds(3f);
             spawner.StartSpawning();
+        Debug.Log("Should be Spawning");
         }
       
     public bool Compare(ArrayList foodGave,ArrayList foodhave)

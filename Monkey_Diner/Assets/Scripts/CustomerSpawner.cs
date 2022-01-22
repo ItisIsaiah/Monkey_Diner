@@ -9,7 +9,7 @@ public class CustomerSpawner : MonoBehaviour
     public GameLoop gl;
 
 
-    public Stack prevSpots;
+    public Queue prevSpots;
     public int randomSpot;
     public int orderNumber;
     public Object customer;
@@ -30,9 +30,9 @@ public class CustomerSpawner : MonoBehaviour
 
    public void  StartSpawning()
     {
-       
+        Debug.Log("IM SPAWNING!");
         randomSpot = Random.Range(0, movespots.Length - 2);
-        prevSpots.Push(randomSpot);
+        prevSpots.Enqueue(randomSpot);
    
         spawnPoint = GetComponent<Transform>();
         movespots[movespots.Length - 1] = door;
@@ -53,7 +53,7 @@ public class CustomerSpawner : MonoBehaviour
                 if (prevSpots.Contains(randomSpot))
                 {
                     randomSpot = Random.Range(0, movespots.Length - 2);
-                    prevSpots.Push(randomSpot);
+                    prevSpots.Enqueue(randomSpot);
                 }
 
 

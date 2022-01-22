@@ -101,6 +101,7 @@ public class CustomerTrail : MonoBehaviour
     {
         if (goAway)
         {
+            thing.prevSpots.Dequeue();
             whereTo =movespot.Length-1;
         }
         //Debug.Log("I AM GOING "+ whereTo );

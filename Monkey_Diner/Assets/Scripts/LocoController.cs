@@ -36,7 +36,7 @@ public class LocoController : MonoBehaviour
     {
         InputHelpers.IsPressed(controller.inputDevice, teleportActivationButton, out bool isAxtivated, activationThreshold);
 
-        Debug.Log(isAxtivated);
+       // Debug.Log(isAxtivated);
         return isAxtivated;
         
     }
