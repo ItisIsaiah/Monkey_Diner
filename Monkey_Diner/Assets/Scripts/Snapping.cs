@@ -6,11 +6,11 @@ public class Snapping : MonoBehaviour
 {
 
     public GameObject UpperDropZone;
-    public Collider UpperCollider;
+   // public Collider UpperCollider;
 
     
 
-     public GameObject LowerDropZone;
+   //  public GameObject LowerDropZone;
      public Collider lowerCollider;
      XRGrabInteractable grab;
 
@@ -23,7 +23,7 @@ public class Snapping : MonoBehaviour
       
         grab = GetComponent<XRGrabInteractable>(); 
         UpperDropZone.SetActive(false);
-        LowerDropZone.SetActive(false);
+       // LowerDropZone.SetActive(false);
 
      
         
@@ -37,6 +37,7 @@ public class Snapping : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("SOMETHINGS HERE"+ name);
         SnapCheck(other);
     }
 
@@ -47,7 +48,7 @@ public class Snapping : MonoBehaviour
         {
                 other.gameObject.tag = "Snapped";
                 UpperDropZone.SetActive(true);
-                LowerDropZone.SetActive(true);
+              //  LowerDropZone.SetActive(true);
             if (gameObject.name!="bottbun"&&CompareTag("Snapped"))
             {
                // StartCoroutine(delayeddisable());
