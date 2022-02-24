@@ -209,9 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpperDropZone: {fileID: 3686156286539803277}
-  UpperCollider: {fileID: 7693489714783545416}
-  LowerDropZone: {fileID: 4050944525472723349}
-  lowerCollider: {fileID: 4980737763913526669}
+  lowerCollider: {fileID: 0}
 --- !u!65 &2626155263195127828
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -403,20 +401,5 @@ Transform:
 --- !u!1 &3686156286539803277 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6166475803107341303, guid: ee3a7a3824ecc8f4a8d25fef6542391f, type: 3}
-  m_PrefabInstance: {fileID: 7400648452344256890}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4050944525472723349 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6810491690266880239, guid: ee3a7a3824ecc8f4a8d25fef6542391f, type: 3}
-  m_PrefabInstance: {fileID: 7400648452344256890}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &4980737763913526669 stripped
-SphereCollider:
-  m_CorrespondingSourceObject: {fileID: 2570218475259065591, guid: ee3a7a3824ecc8f4a8d25fef6542391f, type: 3}
-  m_PrefabInstance: {fileID: 7400648452344256890}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &7693489714783545416 stripped
-SphereCollider:
-  m_CorrespondingSourceObject: {fileID: 896399586217521458, guid: ee3a7a3824ecc8f4a8d25fef6542391f, type: 3}
   m_PrefabInstance: {fileID: 7400648452344256890}
   m_PrefabAsset: {fileID: 0}

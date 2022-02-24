@@ -24,6 +24,7 @@ public class CustomerSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        prevSpots = new Queue();
         started = false;
 
     }
