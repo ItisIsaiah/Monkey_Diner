@@ -33,7 +33,7 @@ public class burgerMaking:OGSnapping
         }
         
     }
-    int ComputefoodStack()
+    ArrayList ComputefoodStack()
     {
         
             int children = transform.childCount;
@@ -49,7 +49,7 @@ public class burgerMaking:OGSnapping
         }
 
 
-        return 0;
+        return topFoods;
     }
 
 }

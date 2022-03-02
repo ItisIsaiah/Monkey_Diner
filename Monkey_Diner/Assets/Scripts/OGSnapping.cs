@@ -42,10 +42,7 @@ public class OGSnapping : MonoBehaviour
 
      public void OnTriggerEnter(Collider other)
     {
-        if (gameObject.CompareTag("Snapped"))
-        {
-
-        }
+        
         if (other.CompareTag("Food"))
         {
             GameObject food = other.gameObject;
