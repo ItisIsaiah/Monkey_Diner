@@ -2,39 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class burgerMaking:Snapping 
+public class burgerMaking:OGSnapping 
 {
-    
-    
-   
     public ArrayList topFoods = new ArrayList();
     ArrayList redundancy = new ArrayList();
-   // int stuffCount;
-
    
-    void Start()
+
+    GameObject child;
+    new void Start()
     {
         base.Start();
-        
-        
-      //  stuffCount = 0;
-       
     }
-
-    // Update is called once per frame
-    void Update()
+       private new void OnTriggerEnter(Collider other)
     {
-
-        
-    }
-    public override void SnapCheck(Collider other)
-    {
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        base.SnapCheck(other);
+        base.OnTriggerEnter(other);
 
         
         if (other.CompareTag("Snapped")) {   
@@ -51,6 +32,24 @@ public class burgerMaking:Snapping
             Debug.Log(other.transform.root.gameObject.name);
         }
         
+    }
+    int ComputefoodStack()
+    {
+        
+            int children = transform.childCount;
+            
+        for (int i = 0; i < children; ++i)
+        {
+            child = transform.GetChild(i).gameObject;
+           
+            if (child.CompareTag("Snapped")) {
+                OGSnapping childSnap= child.GetComponent<OGSnapping>();
+                topFoods.Add(snapped);
+            }
+        }
+
+
+        return 0;
     }
 
 }
