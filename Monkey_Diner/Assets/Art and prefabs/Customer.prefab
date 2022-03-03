@@ -85,6 +85,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -109,6 +110,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &956795913010047091
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +166,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -188,6 +191,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &4065585706497005565
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,6 +247,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -267,6 +272,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5574530150414342315
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +328,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -346,6 +353,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &6128579126291598802
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +409,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -425,6 +434,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &6662861764846542256
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +449,7 @@ GameObject:
   - component: {fileID: 6662861764846542270}
   - component: {fileID: 7733626918893109439}
   - component: {fileID: 1715751510122298339}
+  - component: {fileID: 119154717603536682}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Customer
@@ -477,13 +488,11 @@ MonoBehaviour:
   speed: 5
   goAway: 0
   thing: {fileID: 0}
-  chatbubble: {fileID: 3847484913659512105, guid: 5a88da5cd7c1aef4da21850f9fe63793,
-    type: 3}
+  chatbubble: {fileID: 3847484913659512105, guid: 5a88da5cd7c1aef4da21850f9fe63793, type: 3}
   waitTIme: 0
   startWaitTime: 0
   bubblePoint: {fileID: 2249257847247737666}
-  ResultBubble: {fileID: 6962635086539288745, guid: 91bd834ee2b8cdc4293c2d86d10686d2,
-    type: 3}
+  ResultBubble: {fileID: 6962635086539288745, guid: 91bd834ee2b8cdc4293c2d86d10686d2, type: 3}
   orderNumber: 0
   foodGiven: []
 --- !u!65 &6662861764846542271
@@ -624,6 +633,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!195 &119154717603536682
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6662861764846542256}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &6839083621912428839
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,6 +746,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -739,3 +771,4 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}

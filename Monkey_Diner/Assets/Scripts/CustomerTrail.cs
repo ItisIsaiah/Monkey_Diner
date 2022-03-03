@@ -2,6 +2,8 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
 
 public class CustomerTrail : MonoBehaviour
 {
@@ -32,6 +34,7 @@ public class CustomerTrail : MonoBehaviour
 
 
     GameLoop gameLoop;
+    NavMeshAgent agent;
     #endregion
 
     public enum Food
@@ -43,8 +46,8 @@ public class CustomerTrail : MonoBehaviour
         thing = GetComponentInParent<CustomerSpawner>();
         movespot = thing.movespots;
         whereTo = thing.randomSpot;
-       
 
+        agent = GetComponent<NavMeshAgent>();
         waitTIme = startWaitTime;
         goAway = false;
         time = 120;
@@ -106,14 +109,16 @@ public class CustomerTrail : MonoBehaviour
         }
         //Debug.Log("I AM GOING "+ whereTo );
         if (Vector2.Distance(transform.position, movespot[whereTo].position) < .05f)
-        {
-            
-            return;
+         {
+
+             return;
+         }
+         else
+         {
+            agent.SetDestination(movespot[whereTo].position);
+            //transform.position = Vector3.MoveTowards(transform.position, new Vector3(movespot[whereTo].position.x, transform.position.y, movespot[whereTo].position.z), speed * Time.deltaTime);
         }
-        else
-        {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(movespot[whereTo].position.x, transform.position.y, movespot[whereTo].position.z), speed * Time.deltaTime);
-        }
+        
     }
     #endregion
 
