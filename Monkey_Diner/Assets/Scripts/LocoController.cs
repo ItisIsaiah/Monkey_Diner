@@ -20,15 +20,17 @@ public class LocoController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        if (rightTeleportRay  )
+        if (!PauseMenu.isPaused)
         {
-            rightTeleportRay.gameObject.SetActive(CheckIfActivated(rightTeleportRay));
-        }
-        if (leftTeleportRay  )
-        {
-          
-            leftTeleportRay.gameObject.SetActive(CheckIfActivated(leftTeleportRay));
+            if (rightTeleportRay)
+            {
+                rightTeleportRay.gameObject.SetActive(CheckIfActivated(rightTeleportRay));
+            }
+            if (leftTeleportRay)
+            {
+
+                leftTeleportRay.gameObject.SetActive(CheckIfActivated(leftTeleportRay));
+            }
         }
     }
 

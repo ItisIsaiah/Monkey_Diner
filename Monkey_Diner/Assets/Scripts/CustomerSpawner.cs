@@ -15,7 +15,8 @@ public class CustomerSpawner : MonoBehaviour
     public Object customer;
     Transform spawnPoint;
     bool started;
-
+    [SerializeField]
+    int maxCustomers;
 
     public int customerCount;
     float TimetillSpawn = 5f;
@@ -49,7 +50,7 @@ public class CustomerSpawner : MonoBehaviour
         if (started) {
             curTime += Time.deltaTime;
             //Debug.Log(curTime);
-            if (curTime >= TimetillSpawn && customerCount <= 5)
+            if (curTime >= TimetillSpawn && customerCount <= maxCustomers)
             {
                 if (prevSpots.Contains(randomSpot))
                 {

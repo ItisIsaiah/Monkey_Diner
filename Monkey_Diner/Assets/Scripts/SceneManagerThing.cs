@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Michsky.DreamOS;
 public class SceneManagerThing : MonoBehaviour
 {
 
@@ -14,6 +15,14 @@ public class SceneManagerThing : MonoBehaviour
     }
 
     #endregion
+
+
+
+
+    public HorizontalSelector levelSelect;
+    
+    
+    
     public int sceneSelection { get; set; } = 0;
     public GameObject loadingScreen;
     public Slider slider;
@@ -42,7 +51,7 @@ public class SceneManagerThing : MonoBehaviour
 
     public void LoadSelectedScene()
     {
-        LoadLevel(sceneSelection);
+        LoadLevel(levelSelect.index);
 
     }
 

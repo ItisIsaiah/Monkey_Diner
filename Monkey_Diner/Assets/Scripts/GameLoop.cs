@@ -81,12 +81,12 @@ public class GameLoop : MonoBehaviour
         {
             if (foodhave[i] != foodGave[i])
             {
-              UpdateUI(score, customerCount--); 
+              UpdateUI(score-=100, customerCount--); 
                 return false;
             }
 
         }
-       UpdateUI(score + 500, customerCount--);
+       UpdateUI(score += 500, customerCount--);
         return true;
     }
 
