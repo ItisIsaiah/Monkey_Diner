@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4807c1c687f334d93c9d9e23acf20f, type: 3}
+  m_Name: Burger
+  m_EditorClassIdentifier: 
+  foodName: Burger
+  cookable: 1
+  coreParts:
+  - BottumBun
+  - Patty
+  - TopBun
+  foodParts:
+  - Lettuce
+  - Cheese
+  maxHeight: 7

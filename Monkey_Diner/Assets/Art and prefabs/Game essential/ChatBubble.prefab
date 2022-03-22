@@ -46,6 +46,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
@@ -127,6 +128,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
@@ -208,6 +210,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
@@ -289,6 +292,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
@@ -370,6 +374,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
@@ -453,7 +458,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fabdaed78e652b4fb15f659e9a7895f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpriteHolder: {fileID: 6847179530697994237, guid: 2e70f307a1c6e0c4099141a79c19e98b, type: 3}
   LettuceSprite: {fileID: 21300000, guid: f447473888a89ea4899f5e43fc29371e, type: 3}
   CheeseSprite: {fileID: 21300000, guid: 92d313c2f13b84f44a7a3d91749ad7d5, type: 3}
   PattySprite: {fileID: 21300000, guid: e0a12b06320ac3744a2e1569d37eb0b5, type: 3}
   BottomBunSprite: {fileID: 21300000, guid: 49fd96c71bed62946a0d5331964d8f85, type: 3}
+  BG: {fileID: 0}

@@ -3,7 +3,13 @@ guid: 0fabdaed78e652b4fb15f659e9a7895f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - SpriteHolder: {fileID: 6847179530697994237, guid: 2e70f307a1c6e0c4099141a79c19e98b, type: 3}
+  - LettuceSprite: {fileID: 21300000, guid: b758c4c489b6d854fa42d66f4e354049, type: 3}
+  - CheeseSprite: {fileID: 21300000, guid: ceae01dbd25f70d41a3a1f4bf14d85dc, type: 3}
+  - PattySprite: {fileID: 21300000, guid: 9497c2c35bd532642b076377ffada4db, type: 3}
+  - BottomBunSprite: {fileID: 21300000, guid: 2fee7ab38be7be444b48f72bc9ed1d92, type: 3}
+  - BG: {fileID: 8581951935921955201, guid: ab1a728f106f1754391c89cc66550008, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
