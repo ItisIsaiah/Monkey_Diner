@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63995643351577042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.136, y: 1.32, z: 0.06}
+  m_LocalPosition: {x: 0.136, y: 1.511, z: 0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6662861764846542269}
@@ -5292,10 +5292,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   goAway: 0
-  thing: {fileID: 0}
   chatbubble: {fileID: 8581951935921955201, guid: ab1a728f106f1754391c89cc66550008, type: 3}
-  bubblePoint: {fileID: 2249257847247737666}
   ResultBubble: {fileID: 6962635086539288745, guid: 91bd834ee2b8cdc4293c2d86d10686d2, type: 3}
+  bubblePoint: {fileID: 2249257847247737666}
+  check: {fileID: 0}
+  cross: {fileID: 0}
   orderNumber: 0
   foodGiven: []
 --- !u!65 &6662861764846542271

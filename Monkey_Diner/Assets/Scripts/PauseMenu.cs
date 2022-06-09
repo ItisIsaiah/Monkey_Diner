@@ -23,19 +23,11 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        InputHelpers.IsPressed(pause.inputDevice,  pauseButton, out bool isPressed, pressThreshold );
-        if (InputHelpers.TryReadSingleValue(pause.inputDevice, pauseButton, out float singleValue)
-)
-        {
-            if (!isPaused)
+        if(pause)
             {
-                PauseGame();
-            }
-            else
-            {
-                ResumeGame();
-            }
+            this.gameObject.SetActive(CheckIfActivated());
         }
+        
     }
     void PauseGame()
     {
@@ -48,5 +40,29 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
         isPaused = false;
+    }
+    public void ButtonHandler()
+    {
+
+        InputHelpers.IsPressed(pause.inputDevice, pauseButton, out bool isPressed, pressThreshold);
+        
+        //
+        if (isPressed)
+        {
+            if (!isPaused)
+            {
+                PauseGame();
+            }
+            else
+            {
+                ResumeGame();
+            }
+        }
+        
+    }
+    bool CheckIfActivated()
+    {
+        InputHelpers.IsPressed(pause.inputDevice, pauseButton, out bool isPressed, pressThreshold);
+        return isPressed;
     }
 }

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HoloPink
+  m_Shader: {fileID: -6465566751694194690, guid: 55aa623fc3cc2e74f9915e8a1d55aa1b, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_e8d901fac9ee4f03995ed36bdb908f10_:
+        m_Texture: {fileID: 2800000, guid: b5d3b61d1790264499dc751a18335dab, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_d8f3e791a1834121a8e88992b4f3ef27: 0.1
+    m_Colors:
+    - Color_1738afddc2694603bb950bb3727495c8: {r: 0.97830415, g: 0.023362402, b: 0.990566, a: 0}
+    - Color_f3bdb549040745f4af4046df85ca1539: {r: 3.9581149, g: 0, b: 3.9999995, a: 0}
+    - Vector2_f8dc4f9fbeaa4b62a87f103d46e6c7bc: {r: 1, g: -0.31, b: 0, a: 0}
+  m_BuildTextureStacks: []

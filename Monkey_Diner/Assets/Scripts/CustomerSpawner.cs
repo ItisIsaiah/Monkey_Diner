@@ -33,8 +33,8 @@ public class CustomerSpawner : MonoBehaviour
    public void  StartSpawning()
     {
         Debug.Log("IM SPAWNING!");
-        randomSpot = Random.Range(0, movespots.Length - 2);
-        prevSpots.Enqueue(randomSpot);
+        //randomSpot = Random.Range(0, movespots.Length - 2);
+      //  prevSpots.Enqueue(randomSpot);
    
         spawnPoint = GetComponent<Transform>();
         movespots[movespots.Length - 1] = door;
@@ -47,27 +47,35 @@ public class CustomerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (started) {
+        //
+        /*if (started) {
             curTime += Time.deltaTime;
             //Debug.Log(curTime);
             if (curTime >= TimetillSpawn && customerCount <= maxCustomers)
             {
                 if (prevSpots.Contains(randomSpot))
                 {
-                    randomSpot = Random.Range(0, movespots.Length - 2);
+                   // randomSpot = Random.Range(0, movespots.Length - 2);
                     prevSpots.Enqueue(randomSpot);
                 }
 
 
-                Instantiate(customer, spawnPoint);
-                customerCount++;
-
-                gl.UpdateUI(0, customerCount);
-
-                curTime = 0;
+               
 
 
             }
-        }
+        }*/
+        //
+    }
+
+    public GameObject spawnMonkey()
+    {
+        GameObject monkay= (GameObject)Instantiate(customer, spawnPoint);
+        customerCount++;
+
+        gl.UpdateUI(0, customerCount);
+
+        curTime = 0;
+        return monkay;
     }
 }

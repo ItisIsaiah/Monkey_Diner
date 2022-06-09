@@ -18,6 +18,10 @@ public class GameLoop : MonoBehaviour
     public int score;
     public float time = 60f;
     public int customerCount;
+    public GameObject[] monkays;
+    public Transform[] movespots;
+    ArrayList occupied;
+    
     #endregion
 
     #region SingleTon
@@ -33,10 +37,13 @@ public class GameLoop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        occupied.Add(-1);
+        customerCount = 0;
         spawner = GetComponentInChildren<CustomerSpawner>();
         endText = FindObjectOfType<TextMeshProUGUI>();
         endText.text = "";
         StartCoroutine(StartOfGame());
+        movespots = spawner.movespots;
     }
 
     // Update is called once per frame
@@ -51,7 +58,13 @@ public class GameLoop : MonoBehaviour
             StartCoroutine(EndOfGame());
             
         }
-        
+        #region monkeyMove
+        if (time % 5 == 0&&customerCount<5)
+        {
+            spawnMonkay();
+           
+        }
+        #endregion
     }
 
     public void UpdateUI(double score, double customerCount)
@@ -65,7 +78,7 @@ public class GameLoop : MonoBehaviour
         {
         Debug.Log("Started");
             yield return new WaitForSeconds(3f);
-            spawner.StartSpawning();
+        spawnMonkay();
         Debug.Log("Should be Spawning");
         }
       
@@ -107,6 +120,20 @@ public class GameLoop : MonoBehaviour
         }
            
 
+    }
+    void spawnMonkay()
+    {
+        int randomSpot = UnityEngine.Random.Range(0, movespots.Length - 2);
+        while (occupied.Contains(randomSpot))
+        {
+            randomSpot = UnityEngine.Random.Range(0, movespots.Length - 2);
+        }
+        occupied.Add(randomSpot);
+        customerCount++;
+        monkays[customerCount] = spawner.spawnMonkey();
+        GameObject tempMonkey = monkays[customerCount];
+        CustomerTrail tempMonkeyScript = tempMonkey.GetComponent<CustomerTrail>();
+        tempMonkeyScript.moveHere = movespots[randomSpot];
     }
 
     
