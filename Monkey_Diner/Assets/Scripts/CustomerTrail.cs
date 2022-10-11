@@ -42,6 +42,7 @@ public class CustomerTrail : MonoBehaviour
     public Transform moveHere;
     #endregion
 
+    
   
     void Start()
     {
