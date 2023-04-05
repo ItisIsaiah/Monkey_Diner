@@ -14,19 +14,19 @@ public class CustomerSpawner : MonoBehaviour
     public int orderNumber;
     public Object customer;
     Transform spawnPoint;
-    bool started;
+    
     [SerializeField]
     int maxCustomers;
 
     public int customerCount;
-    float TimetillSpawn = 5f;
-    float curTime;
-    int increment = 0;
+    //float TimetillSpawn = 5f;
+    //float curTime;
+    
     // Start is called before the first frame update
     void Start()
     {
         prevSpots = new Queue();
-        started = false;
+       
 
     }
 
@@ -40,8 +40,7 @@ public class CustomerSpawner : MonoBehaviour
         movespots[movespots.Length - 1] = door;
         Instantiate(customer, spawnPoint);
         customerCount = 1;
-        curTime = 0;
-        started = true;
+        
 
     }
     // Update is called once per frame
@@ -75,7 +74,7 @@ public class CustomerSpawner : MonoBehaviour
 
         gl.UpdateUI(0, customerCount);
 
-        curTime = 0;
+        
         return monkay;
     }
 }

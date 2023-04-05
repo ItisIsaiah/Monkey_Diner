@@ -18,9 +18,9 @@ public class GameLoop : MonoBehaviour
     public int score;
     public float time = 60f;
     public int customerCount;
-    public GameObject[] monkays;
+    public ArrayList monkays=new ArrayList();
     public Transform[] movespots;
-    ArrayList occupied;
+    ArrayList occupied=new ArrayList();
     
     #endregion
 
@@ -37,7 +37,7 @@ public class GameLoop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        occupied.Add(-1);
+      //  occupied.Add(-1);
         customerCount = 0;
         spawner = GetComponentInChildren<CustomerSpawner>();
         endText = FindObjectOfType<TextMeshProUGUI>();
@@ -129,11 +129,12 @@ public class GameLoop : MonoBehaviour
             randomSpot = UnityEngine.Random.Range(0, movespots.Length - 2);
         }
         occupied.Add(randomSpot);
-        customerCount++;
-        monkays[customerCount] = spawner.spawnMonkey();
-        GameObject tempMonkey = monkays[customerCount];
+         monkays.Add( spawner.spawnMonkey());
+        GameObject tempMonkey = (GameObject)monkays[monkays.Count-1];
         CustomerTrail tempMonkeyScript = tempMonkey.GetComponent<CustomerTrail>();
         tempMonkeyScript.moveHere = movespots[randomSpot];
+
+        customerCount = monkays.Count;
     }
 
     

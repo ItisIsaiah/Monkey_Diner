@@ -54,13 +54,13 @@ public class ChatB : MonoBehaviour
         {
             default:
             case IconType.BOTTOMBUN: return BottomBunSprite;
-                break;
+                
             case IconType.PATTY: return PattySprite;
-                break;
+                
             case IconType.CHEESE: return CheeseSprite;
-                break;
+                
             case IconType.LETTUCE: return LettuceSprite;
-                break;
+                
         }
     }
     

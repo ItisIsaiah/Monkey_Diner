@@ -31,7 +31,10 @@ public class SceneManagerThing : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        loadingScreen.SetActive(false);
+        if (loadingScreen)
+        {
+            loadingScreen.SetActive(false);
+        }
     }
     public void NextLevel()
     {

@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class OGSnapping : MonoBehaviour
 {
     Transform snapPoint;
-    bool isSnapping;
+    //bool isSnapping;
     public Collider snapCollider;
     //public Collider physicsCollider;
     public ArrayList snapped=new ArrayList();
@@ -15,7 +15,7 @@ public class OGSnapping : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        isSnapping = false;
+       
         
         rb = GetComponent<Rigidbody>();
         if (snapCollider == null)
@@ -75,7 +75,7 @@ public class OGSnapping : MonoBehaviour
     }
     public void Snap(Transform snap)
     {
-        isSnapping = true;
+       
         snapPoint = snap;
         Destroy(snapCollider);
         rb.freezeRotation = true;
